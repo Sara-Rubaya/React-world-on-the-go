@@ -25,12 +25,12 @@ const Countries = ({countriesPromise}) => {
             <h3>Traveled so far: {visitedCountries.length}</h3>
             <div className='visited-Flags-container'>
                 {
-                    visitedFlags.map(flag => <img src={flag}></img>)
+                    visitedFlags.map((flag,index) => <img key={index} src={flag}></img>)
                 }
             </div>
             <ol>
                 {
-                    visitedCountries.map(country => <li>{country.name.common}</li>)
+                    visitedCountries.map(country => <li key={country.cca3}>{country.name.common}</li>)
                 }
             </ol>
             <div className='countries'>
